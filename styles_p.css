@@ -1,0 +1,11 @@
+
+header{
+    background-color: rgb(176, 232, 232);
+    display: flex;
+    justify-content: space-between;
+   border-radius: 10px;
+
+}
+h1{
+    margin: 10px;
+}

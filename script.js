@@ -22,6 +22,14 @@ fetch(URL)
         let productCard = document.createElement('div');
         productCard.classList.add('product-card');
 
+
+
+        productCard.addEventListener('click', () => {
+                window.location.href = `product.html?id=${el.id}`;
+            });
+
+
+
         productCard.style.border = '1px solid #e0e0e0';
         productCard.style.borderRadius = '8px';
         productCard.style.padding = '15px';
@@ -29,6 +37,9 @@ fetch(URL)
         productCard.style.flexDirection = 'column';
         productCard.style.justifyContent = 'space-between';
         productCard.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
+
+
+
 
         let headingTag = document.createElement('h2');
         headingTag.textContent = el.title;
