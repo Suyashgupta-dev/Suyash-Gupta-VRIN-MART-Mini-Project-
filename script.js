@@ -77,8 +77,6 @@ fetch(URL)
         let cartBtn = document.createElement('button');
         cartBtn.textContent = "Add to Cart";
         cartBtn.classList.add('cart-btn');
-        cartBtn.addEventListener('click', () => {
-            console.log(`${el.title} cart mein add ho gaya!`);})
 
         cartBtn.style.backgroundColor = '#007bff';
         cartBtn.style.color = 'white';

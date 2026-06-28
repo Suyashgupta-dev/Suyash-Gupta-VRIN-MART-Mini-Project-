@@ -226,9 +226,6 @@ fetch(`https://dummyjson.com/products/${productId}`)
 
         rightSide.appendChild(headingTag);
         rightSide.appendChild(brandTag);
-        // rightSide.appendChild(category);
-        // rightSide.appendChild(priceTag);
-    //    rightSide.appendChild(discountPercentage);
        rightSide.appendChild(Discountedprice);
        rightSide.appendChild(rating);
         rightSide.appendChild(descTag);
