@@ -3,17 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product-Details</title>
-    <link rel="stylesheet" href="styles_p.css">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-     <header>
-        <h1 a href="index.html" style=" color:black;">Logo</h1>
-        <h1>Cart</h1>
-    </header>
-    <main>
-      <h2>Loading product details...</h2>
+    <nav class="navbar">
+        <div class="logo">
+            <img class="img1"src="logo.png" alt="logo">
+        </div>
+        <div class="header">
+            <a class="c1" href="index.html">HOME</a>
+            <a class="c1" href="product.html">PRODUCT DETAILS</a>
+            <a class="c1" href="cart.html">CART</a>
+        </div>
+    </nav>
+     
+    <main id="product-container">
+        <h2 class="loading-text">Loading product details...</h2>
     </main>
+
     <script src="script_p.js"></script>
 </body>
 </html>
