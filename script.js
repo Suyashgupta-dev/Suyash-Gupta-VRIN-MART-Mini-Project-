@@ -89,6 +89,32 @@ fetch(URL)
         cartBtn.addEventListener('mouseout', () => cartBtn.style.backgroundColor = '#007bff');
 
 
+        
+cartBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); 
+
+      let cart = JSON.parse(localStorage.getItem('vrin_cart')) || [];
+    
+    
+      let existingProduct = cart.find(item => item.id === el.id);
+    if (existingProduct) {
+        existingProduct.quantity += 1;
+    } 
+    else {
+        cart.push({
+            id: el.id,
+             title: el.title,
+            thumbnail: el.thumbnail,
+             price: Math.ceil(el.price * 95), 
+            quantity: 1
+        });
+    }
+
+    localStorage.setItem('vrin_cart', JSON.stringify(cart));
+    alert(`${el.title} added to cart!`);
+});
+
+
         productCard.appendChild(headingTag);    
         productCard.appendChild(imgTag);
         productCard.appendChild(descTag);

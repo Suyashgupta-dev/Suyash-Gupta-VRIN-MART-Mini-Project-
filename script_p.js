@@ -222,6 +222,32 @@ fetch(`https://dummyjson.com/products/${productId}`)
         cart.style.marginTop = '10px';
         cart.style.marginLeft = '230px';
 
+        cart.addEventListener('click', () => {
+
+    let cartList = JSON.parse(localStorage.getItem('vrin_cart')) || [];
+
+     let calculatedPrice = Math.round((product.price * 95) - ((product.price * 95) * (product.discountPercentage / 100)));
+
+    let existingProduct = cartList.find(item => item.id === product.id);
+    if (existingProduct) {
+        existingProduct.quantity += 1;
+
+    } 
+    else {
+        cartList.push({
+              id: product.id,
+              title: product.title,
+             thumbnail: product.thumbnail,
+             price: calculatedPrice, 
+            quantity: 1
+        });
+    }
+
+    localStorage.setItem('vrin_cart', JSON.stringify(cartList));
+    
+    alert(`${product.title} added to cart!`);
+});
+
 
 
         rightSide.appendChild(headingTag);
