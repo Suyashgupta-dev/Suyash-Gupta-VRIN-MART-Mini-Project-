@@ -226,7 +226,7 @@ fetch(`https://dummyjson.com/products/${productId}`)
 
     let cartList = JSON.parse(localStorage.getItem('vrin_cart')) || [];
 
-     let calculatedPrice = Math.round((product.price * 95) - ((product.price * 95) * (product.discountPercentage / 100)));
+
      let priceInRupees = product.price * 95;
     let calculatedPrice = Math.round(priceInRupees - (priceInRupees * (product.discountPercentage / 100)));
     let originalPrice = Math.ceil(priceInRupees);
