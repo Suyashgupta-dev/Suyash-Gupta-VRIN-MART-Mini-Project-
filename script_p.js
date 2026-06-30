@@ -227,7 +227,9 @@ fetch(`https://dummyjson.com/products/${productId}`)
     let cartList = JSON.parse(localStorage.getItem('vrin_cart')) || [];
 
      let calculatedPrice = Math.round((product.price * 95) - ((product.price * 95) * (product.discountPercentage / 100)));
-
+     let priceInRupees = product.price * 95;
+    let calculatedPrice = Math.round(priceInRupees - (priceInRupees * (product.discountPercentage / 100)));
+    let originalPrice = Math.ceil(priceInRupees);
     let existingProduct = cartList.find(item => item.id === product.id);
     if (existingProduct) {
         existingProduct.quantity += 1;
@@ -237,9 +239,10 @@ fetch(`https://dummyjson.com/products/${productId}`)
         cartList.push({
               id: product.id,
               title: product.title,
-             thumbnail: product.thumbnail,
-             price: calculatedPrice, 
-            quantity: 1
+              thumbnail: product.thumbnail,
+              originalPrice: originalPrice, 
+              price: calculatedPrice,       
+              quantity: 1
         });
     }
 

@@ -101,11 +101,16 @@ cartBtn.addEventListener('click', (e) => {
         existingProduct.quantity += 1;
     } 
     else {
+        let priceInRupees = el.price * 95;
+        let finalPrice = Math.round(priceInRupees - (priceInRupees * (el.discountPercentage / 100)));
+        let originalPrice = Math.ceil(priceInRupees);
+
         cart.push({
             id: el.id,
-             title: el.title,
+            title: el.title,
             thumbnail: el.thumbnail,
-             price: Math.ceil(el.price * 95), 
+            originalPrice: originalPrice, 
+            price: finalPrice,            
             quantity: 1
         });
     }
